@@ -1,1 +1,7 @@
+# use ruff in terminal with ruff check utils.py
+
 [tool.ruff]
+
+# additional rules
+[tool.ruff.lint]
+extend-select = ["F841"] #unused variables
