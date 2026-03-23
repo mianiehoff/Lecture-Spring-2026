@@ -7,7 +7,7 @@
 #The goal is to have as few cars as possible. If the passengers can't be distributed exactly, the return ist empty.
 #To return the best combination and tolerate empty seats change the code to psum >= passengers...
 
-#example: a group of 40 people can be distributed on 8 normal cars (which makes 8 vehicles) OR on 2 minibusses, 1 minivan and 1 normal car ("pkw") (which makes 4 vehicles). 
+#example: a group of 40 people can be distributed on 8 normal cars (which makes 8 vehicles) OR on 2 minibusses, 2 minivans and 0 normal cars ("pkw") (which makes 4 vehicles). 
 #(car, minivan, minibus)
 
 
@@ -25,27 +25,26 @@ def find_best_combination_of_vehicles(passengers):
                     best_combination = (pkw, minivan, minibus)
                     least_counter = vehicle_sum                
     return best_combination
-
-print("(cars, minivans, minibusses):", find_best_combination_of_vehicles(26))
+#print("(cars, minivans, minibusses):", find_best_combination_of_vehicles(40))
 
 
 
 ###############################################################################################
-#Die Funktion gibt eine Liste aller Passwort-Kombinationen nach dem Schema HaustiernameKalendertageStraßennamen (Bsp.: Bella17Schillerstraße) zurück.
+#Die Funktion gibt eine Liste aller Passwort-Kombinationen nach dem Schema HaustiernameKalendertageStraßennamen (Bsp.: Bella17Schillerstraße) zurück. 
+#Optionen für den Haustiernamen, die Kalendertage und den Straßennamen sind in der Funktion bereits vorgegeben.
 
 haustiernamen = ('Bella', 'Coco', 'Merlin')
 kalendertage = ('17', '2', '7')
 strassennamen = ('Münzenhalde', 'Schillerstraße', 'Elsterweg', 'Johnsallee')
 def list_passwd():
-    "Passwort-Liste"
+    #Passwort-Liste
     liste = []
     for i in haustiernamen:
         for j in kalendertage:
             for k in strassennamen:
                 liste.append(i+j+k)
     return liste
-
-print(list_passwd())
+#print(list_passwd())
 
 
 ###############################################################################################
@@ -55,7 +54,6 @@ print(list_passwd())
 def prime(x):
     #Primzahlen
     i = 2
-    j = 3
     if x == 0 or x == 1:
         return False 
     
@@ -80,8 +78,7 @@ def xprime(x):
         if prime(i) is True :
             a += 1
     return(i)
-
-print(xprime(5))
+#print(xprime(5))
 
 
 ###############################################################################################
@@ -91,13 +88,12 @@ print(xprime(5))
 
 def interleave(x, ys):
     "Permutation"
-    list = []
+    list1 = []
     for i in range(len(ys)+1):
         word = ys[i:] + x + ys[:i]
-        list.append(word)
-    return list
-
-print(interleave("e", "ar"))
+        list1.append(word)
+    return list1
+#print(interleave("e", "ar"))
 
 
 ###############################################################################################
@@ -107,12 +103,11 @@ print(interleave("e", "ar"))
 
 def perms(xs):
     "Permutation"
-    list = []
+    list2 = []
     for j in range(len(xs)):
         word = interleave(xs[j], xs[:j]+xs[j+1:])
         
-        if word not in list:
-            list.extend(word)
-    return list
-
-print(perms("hear"))
+        if word not in list2:
+            list2.extend(word)
+    return list2
+#print(perms("hear"))
