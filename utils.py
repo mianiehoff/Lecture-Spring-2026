@@ -15,10 +15,10 @@ def find_best_combination_of_vehicles(passengers):
     "Kombinationen"
     best_combination = ()
     least_counter = passengers
-    for minibus in range(passengers // 13, -1, -1):
+    for minibus in range(passengers // 13,-1,-1):
         for minivan in range((passengers - minibus * 13) // 7, -1, -1):
-            pkw = (passengers - minibus * 13 - minivan * 7) // 5
-            psum = minibus * 13 + minivan * 7 + pkw * 5
+            pkw = (passengers - minibus * 13 - minivan*7) // 5
+            psum = minibus*13+ minivan * 7 + pkw * 5
             if psum == passengers and pkw >= 0 and minivan >= 0 and minibus >= 0:
                 vehicle_sum = pkw + minivan + minibus
                 if vehicle_sum < least_counter:
@@ -45,7 +45,7 @@ def list_passwd():
     for i in haustiernamen:
         for j in kalendertage:
             for k in strassennamen:
-                liste.append(i + j + k)
+                liste.append(i+j+k)
     return liste
 
 
